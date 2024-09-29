@@ -21,7 +21,7 @@ export default function Navbar() {
         <ul className="sm:flex hidden items-center gap-8">
           {navList.map((list, index) => {
             return (
-              <li>
+              <li key={index}>
                 <NavLink
                   to={`${list.path}`}
                   className={({ isActive }) => (isActive ? "active" : "")}
@@ -54,7 +54,7 @@ export default function Navbar() {
         <ul className="fixed top-[108px] left-0 w-full h-auto pb-8 border-b bg-white shadow-sm z-50">
           {navList.map((list, index) => {
             return (
-              <li className="mt-5 px-4">
+              <li className="mt-5 px-4" key={index}>
                 <NavLink
                   onClick={() => setIsMenuOpen(false)}
                   to={`${list.path}`}
